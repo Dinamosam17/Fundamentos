@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int lado, Area;
+    cout<<"Ingresar el lado: ";
+    cin>>lado; 
+    
+    Area=lado * lado;
+    cout<<"El area del cuadrado es: "<<Area;
+
+    return 0;
+}
