@@ -1,0 +1,30 @@
+#include <iostream>
+#include "math.h"
+
+using namespace std;
+int main()
+{
+   
+   float a, b, c, D, xR, xi; 
+   cout<<"Ingresar a: ";
+   cin>>a;
+   
+   cout<<"Ingresar b: ";
+   cin>>b;
+   
+   cout<<"Ingresar c: ";
+   cin>>c;
+   
+   cout<<" D <- b*b-4*a*c "<<endl;
+   
+   D= b*b-4*a*c;
+   if (D<0);
+   {
+       xR = -b/(2*a);
+       xi = sqrt(1-D)/(2*a);
+       cout<<"Solucion imaginaria 1"<<xR<< " + "<< xi<<endl;
+       cout<<"Solucion imaginaria 1"<<xR<< " - "<< xi<<endl;
+   }
+   
+   return 0;
+}
