@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+void ingresarVenta(vector<string>& productos, vector<double>& ventas) {
+    string producto;
+    double venta;
+
+    cout << "Nombre del producto: ";
+    cin.ignore();
+    getline(cin, producto);
+
+    cout << "Venta realizada: $";
+    cin >> venta;
+
+    productos.push_back(producto);
+    ventas.push_back(venta);
+}
+
+double calcularVentasTotales(const vector<double>& ventas) {
+    double total = 0;
+    for (double venta : ventas) {
+        total += venta;
+    }
+    return total;
+}
+
+int main() {
+    vector<string> productos;
+    vector<double> ventas;
+
+    char continuar = 's';
+
+    while (continuar == 's' || continuar == 'S') {
+        ingresarVenta(productos, ventas);
+
+        cout << "¿Desea ingresar otra venta? (s/n): ";
+        cin >> continuar;
+        continuar = tolower(continuar);
+    }
+
+    double ventasTotales = calcularVentasTotales(ventas);
+
+    cout << "Ventas totales realizadas: $" << fixed << setprecision(2) << ventasTotales << endl;
+
+    return 0;
+}
